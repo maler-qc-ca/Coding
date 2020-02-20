@@ -1,0 +1,13 @@
+{
+    "HOME": {
+        "HELLO": "Bienvenue {{ name }}!",
+        "SELECT": "Changer la langue"
+    },
+    "label": {
+        "save": "Enregistrer"
+    },
+    "here": "ICI",
+    "level": {
+        "in": "dans"
+    }
+}

@@ -1,0 +1,9 @@
+@import '~@angular/material/theming';
+
+$component-primary: mat-palette($mat-purple);
+$component-accent: mat-palette($mat-pink, A200, A100, A400);
+$component-theme: mat-dark-theme($component-primary, $component-accent);
+
+@include mat-core-theme($component-theme);
+@include mat-button-theme($component-theme);
+@include mat-checkbox-theme($component-theme);

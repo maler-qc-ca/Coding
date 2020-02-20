@@ -1,0 +1,24 @@
+@import '~@angular/material/theming';
+
+$config: mat-typography-config(
+  $font-family: 'Comic Sans MS',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+// @include mat-base-typography($config);
+// @include mat-checkbox-typography($config);
+@include angular-material-typography($config);
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+$default-config: mat-typography-config();
+
+.header {
+  font-size: mat-font-size($default-config, headline);
+  font-family: mat-font-family($default-config);
+}
+
+.title {
+  @include mat-typography-level-to-styles($default-config, title);
+}

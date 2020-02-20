@@ -1,0 +1,13 @@
+{
+    "HOME": {
+        "HELLO": "Welcome {{ name }}!",
+        "SELECT": "Change language"
+    },
+    "label": {
+        "save": "Save"
+    },
+    "here": "Here",
+    "level": {
+        "in": "In"
+    }
+}

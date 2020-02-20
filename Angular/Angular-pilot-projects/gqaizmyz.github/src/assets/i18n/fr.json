@@ -1,0 +1,10 @@
+{
+	"HOME": {
+		"SELECT": "Changer de langue",
+		"TITLE": "Bonjour angulaire avec ngx-translate!"
+	},
+	"MAIN": {
+		"AZ": "x",
+		"USERNAME": "fe"
+	}
+}

@@ -1,0 +1,203 @@
+laravel new app
+
+php artisan
+php artisan migrate
+php artisan migrate:rollback
+php artisan migrate:fresh
+
+php artisan make:* /* Create Files */
+php artisan make:migration create_project_table
+php artisan make:controller PagesController
+
+php artisan serve
+
+php artisan make:model
+
+php artisan tinker
+
+c:\Laravel\project>php artisan make:model Project
+c:\Laravel\project>php artisan tinker
+>>> App\Project::all();
+>>> App\Project::first();
+>>> App\Project::latest()->first();
+>>> $project = new App\Project;
+>>> $project->title = 'My xxx';
+>>> $project->description = 'Lorem ipsum';
+>>> $project
+>>> $project->save();
+>>> App\Project::latest()->first();
+>>> App\Project::first()->title;
+>>> App\Project::all()[0];
+>>> App\Project::all()[1];
+>>> App\Project::all()[1]->title;
+>>> App\Project::all()->map->title;
+
+c:\Laravel\project>php artisan make:controller ProjectsController
+c:\Laravel\project>php artisan inspire
+c:\Laravel\project>php artisan foobar
+c:\Laravel\project>php artisan help foobar
+>>> factory(App\User::class)->make();
+>>> factory(App\User::class)->cretae();
+
+c:\Laravel\project>php artisan route:list
+c:\Laravel\project>php artisan make:controller PostController -r
+c:\Laravel\project>php artisan make:controller PostController -r -m
+c:\Laravel\project>php artisan make:controller PostController -r -m Post
+
+c:\Laravel\project>php artisan make:model Task -m -f
+c:\Laravel\project>php artisan migrate
+c:\Laravel\project>php artisan tinker
+>>> App\Project::first();
+>>> App\Project::first()->tasks;
+>>> App\Task::first()
+>>> App\Task::first()->project;
+
+php artisan make:model Post -a
+
+
+php artisan make:provider SocialServiceProvider
+
+php artisan config:cache // For Prod Optimization
+php artisan config:clear
+
+php artisan make:auth
+
+>>> factory(App\User::class)->make()->save();
+
+php artisan make:middleware LogQueries
+
+php artisan make:policy ProjectPolicy --model=Project
+
+composer require laravel/telescope --dev
+php artisan telescope:install
+php artisan migrate
+
+>>> cache()->get('stats')
+>>> cache()->get('stats')['lesson']
+
+php artisan make:mail ProjectCreated --markdown="mail.project-created"
+
+>>> App\User::latest()->first();
+>>> App\User::latest()->first()->projects;
+
+
+
+php artisan make:event ProjectCreated
+php artisan make:listener SendProjectCreatedNotification
+php artisan make:listener SendProjectCreatedNotification --event=ProjectCreated
+
+#in AppServiceProvider.php
+use Illuminate\Support\Facades\Schema;
+Schema::defaultStringLength(191); // in boot()
+
+php artisan make:notification SubscriptionRenewalFailed
+php artisan notification:table
+
+>>> $user->notifications;
+>>> $user->unreadnotifications;
+>>> $user->notifications->first()->markAsRead();
+
+
+
+
+
+npm run dev
+npm run prod
+npm run watch
+
+
+
+>>> \App\User::all()
+>>> $users = \App\User::all()
+>>> $users[0]
+>>> $users->first();
+>>> $users->last();
+>>> $users->find(4)
+>>> $users->find(1)
+>>> $users->where('email', 'user@local.com')
+>>> $users->where('email', 'user@local.com')->first()
+>>> $users->where('email', 'user@local.com')->first()->name
+>>> $users->pluck('email')
+>>> $users->pluck('email')[0]
+>>> $users->pluck('email')->toArray()
+>>> $users->pluck('name')
+>>> $users->map(function ($user) { return $user->name; })
+>>> $users->map(function ($user) { return $user->name . ' XX'; })
+>>> $users->filter( function ($user) { return $user->id > 1;  } )
+>>> $users->filter( function ($user) { return $user->id >= 2;  } )
+>>> collect(['A', 'B', 'C'])
+>>> $arr = ['A', 'B', 'C'];
+>>> array_map(function ($item) { return strtoupper($item); }, $arr)
+>>> collect($arr)
+>>> collect($arr)->map(function ($item) { return strtoupper($item); })
+>>> collect($arr)->map(function ($item) { return strtoupper($item); })
+>>> $song1 = (object) ['title' => 'Song 1', 'length' => 100 ];
+>>> $song2 = (object) ['title' => 'Song 2', 'length' => 300 ];
+>>> $song3 = (object) ['title' => 'Song 3', 'length' => 200 ];
+>>> collect([$song1, $song2, $song3]);
+>>> $songs = collect([$song1, $song2, $song3]);
+>>> $songs->pluck('title')
+>>> $songs->sum('length')
+>>> $users = \App\User::all();
+>>> $users->filter(function ($user) { return $user->email_verified_at; } )
+>>> $users->filter(function ($user) { return !$user->email_verified_at; } )
+>>> $users->filter->email_verified_at
+>>> $users->filter->email_verified_at
+>>> $users = \App\User::all();
+>>> $users->filter->email_verified_at
+>>> $users = \App\User::all();
+>>> $users->filter->isVerified();
+>>> $users->first()->isVerified();
+>>> $users->last()->isVerified();
+>>> $users->filter(function ($user) { return $user->isVerified(); } )
+>>> $users = \App\User::all();
+>>> $users->filter->isNotVerified();
+
+
+composer dump-autoload // For Helpers and Composer
+
+php artisan make:test TeamTest
+php artisan make:test UsersTest --unit
+
+vendor\bin\phpunit tests\Feature\TeamTest.php
+vendor\bin\phpunit tests\Unit\UsersTest.php
+vendor\bin\phpunit tests\Feature\ProjectsTest.php
+
+
+
+
+git init
+git add .
+git commit -m "Install Framework"
+git commit -m "Update Framework"
+
+
+php artisan down --message="TEST" --retry=80
+php artisan up
+
+
+--------------------------------------------------------------------------------------------------------------
+TDD Project
+--------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt-get install -y php7.2
+sudo apt install php-dev libmcrypt-dev php-pear
+sudo pecl channel-update pecl.php.net
+sudo apt-get install -y php7.2-gd
+sudo apt-get install -y php7.2-mbstring
+sudo apt-get install -y php7.2-xml
+
+sudo apt-get install apache2 libapache2-mod-php7.2
+
+sudo apt-get install mysql-server php7.2-mysql
+
+
+
+php7.2-mcrypt

@@ -1,0 +1,16 @@
+<div id="container">
+    <div *ngIf="isLoggedIn">
+        <h1>User logged in</h1>
+        <p>User is: {{ user.name }}</p>
+    </div>
+    <div *ngIf="!isLoggedIn">
+        <h1>User not logged in</h1>
+        <p>Please log in first</p>
+    </div>
+    <h4>{{ data }}</h4>
+
+    <button type="button" (click)="onClick()">Click</button>
+</div>
+<h2 highlight="skyblue">About</h2>
+<h3 highlight="">About - Branch</h3>
+

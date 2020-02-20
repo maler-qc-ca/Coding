@@ -1,0 +1,23 @@
+<nb-card class="card" >
+  <nb-card-header class="slot">
+    <div class="space space-component vcenter hleft col-md-12 background-transparent">
+      <h6 class="text-basic">Card Header</h6>
+      <nb-icon class="icon primary" nbTooltip="Tool" icon="star-outline"></nb-icon>
+    </div>
+  </nb-card-header>
+
+  <nb-card-body class="slot">
+    <div class="space space-component1 vtop hleft col-md-12 background-transparent">
+      <app-smart-table class="table" [settings]="settings" [source]="source"></app-smart-table>
+    </div>
+  </nb-card-body>
+
+  <nb-card-footer class="slot">
+    <div class="space space-component vtop hleft col-md-12 background-transparent">
+      <button nbButton class="left" size="medium" appearance="filled" status="primary" fullWidth>
+          <nb-icon icon="star"></nb-icon>
+          Button
+      </button>
+    </div>
+  </nb-card-footer>
+</nb-card>

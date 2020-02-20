@@ -1,0 +1,10 @@
+{
+	"HOME": {
+		"SELECT": "Change language",
+		"TITLE": "Hello Angular with ngx-translate!"
+	},
+	"MAIN": {
+		"AZ": "x",
+		"USERNAME": "Test"
+	}
+}

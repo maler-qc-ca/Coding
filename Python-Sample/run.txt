@@ -1,0 +1,1 @@
+c:\Program Files (x86)\Python37-32>python.exe C:\Users\moe.aler\Downloads\Python-Sample\format.py

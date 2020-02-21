@@ -13,9 +13,8 @@ class ArticlesController extends Controller
         return view('articles.index', ['articles' => $articles]);
     }
 
-    public function show($articleId)
+    public function show(Article $article)
     {
-        $article = Article::find($articleId);
         return view('articles.show', ['article' => $article]);
     }
 
@@ -26,43 +25,38 @@ class ArticlesController extends Controller
 
     public function store()
     {
-        request()->validate([
-            'title' => 'required',
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]);
+        $validatedAttributes = $this->validatedArticle();
 
-        $article = new Article();
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-        $article->save();
-        return redirect('/articles');
+        Article::create($validatedAttributes);
+
+        return redirect(route('articles.index'));
     }
 
-    public function edit($articleId)
+    public function edit(Article $article)
     {
-        $article = Article::find($articleId);
-        return view('/articles.edit', ['article' => $article]);
+        // return view('/articles.edit', ['article' => $article]);
+        return view('/articles.edit', compact('article'));
     }
 
-    public function update($articleId)
+    public function update(Article $article)
     {
-        request()->validate([
-            'title' => 'required',
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]);
+        $validatedAttributes = $this->validatedArticle();
 
-        $article = Article::find($articleId);
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-        $article->save();
-        return redirect(('/articles/' . $article->id));
+        $article->update($validatedAttributes);
+
+        return redirect($article->path());
     }
 
     public function destroy()
     {
+    }
+
+    protected function validatedArticle()
+    {
+        return request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
     }
 }

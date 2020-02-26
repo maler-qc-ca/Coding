@@ -19,3 +19,4 @@ php artisan make:factory ArticleFactory -m "App\Article"
 >>> $article->user;
 
 >>> App\Article::find(1)->author;
+>>> App\Article::find(1)->tags->pluck('name');

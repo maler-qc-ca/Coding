@@ -33,9 +33,12 @@ class ArticlesController extends Controller
 
     public function store()
     {
-        $validatedAttributes = $this->validatedArticle();
+        $article = new Article($this->validatedArticle());
+        $article->user_id = 1;
 
-        Article::create($validatedAttributes);
+        $article->save();
+
+        $article->tags()->attach(request('tags'));
 
         return redirect(route('articles.index'));
     }
@@ -64,7 +67,8 @@ class ArticlesController extends Controller
         return request()->validate([
             'title' => 'required',
             'excerpt' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'tags' => 'exists:tags,id'
         ]);
     }
 }

@@ -43,8 +43,8 @@
 
             <div class="field">
                 <label class="label" for="tags">Tags</label>
-                <div class="control">
-                    <select name="tags[]">
+                <div class="select is-multiple control">
+                    <select name="tags[]" multiple>
                         @foreach ($tags as $tag)
                         <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                         @endforeach

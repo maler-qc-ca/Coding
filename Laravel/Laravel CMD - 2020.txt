@@ -32,3 +32,10 @@ php artisan make:factory ArticleFactory -m "App\Article"
 >>> $tags = App\Tag::findMany([1,2]);
 >>> $article->tags()->attach($tags);
 
+
+composer require laravel/ui --dev
+php artisan ui vue --auth
+npm install && npm run dev
+
+php artisan route:list
+

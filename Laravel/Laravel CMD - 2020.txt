@@ -39,3 +39,29 @@ npm install && npm run dev
 
 php artisan route:list
 
+>>> App\Article::first();
+>>> App\Article::first()->title;
+>>> App\Article::all();
+>>> $tags = App\Article::first()->tags;
+>>> $tags->first();
+>>> $tags->last();
+	>>> $tags->where('name', 'Laravel'); !== App\Tag::where('name', 'Laravel')->first(); (DB Eleq)
+>>> $tags->first(function ($tag) { return strlen($tag->name) > 5; });
+>>> collect(['a', 'b', 'c', ['x', 'y']])->flatten();
+
+>>> $items = collect([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+>>> $items->filter( function ($item) { return $item >= 5; } );
+>>> $greaterThan4 = $items->filter( function ($item) { return $item >= 5; } );
+>>> $items->filter( function ($item) { return $item % 2 === 0; } );
+>>> $items->filter( function ($item) { return $item % 2 === 0; } )->map( function($item) { return $item * 2; }  );
+>>> $items->filter( function ($item) { return $item % 2 === 0; } )->map( function($item) { return $item * 2; }  )->last();
+
+>>> $articles = App\Article::with('tags')->get();
+>>> $articles->pluck('title');
+
+>>> $articles->pluck('tags');
+>>> $articles->pluck('tags')->collapse();
+>>> $articles->pluck('tags')->collapse()->pluck('name');
+>>> $articles->pluck('tags')->collapse()->pluck('name')->unique(); === $articles->pluck('tags.*.name')->collapse()->unique();
+>>> $relevantTags = $articles->pluck('tags.*.name')->collapse()->unique();
+>>> $relevantTags = $articles->pluck('tags.*.name')->collapse()->unique()->map(function ($item){ return ucwords($item); });

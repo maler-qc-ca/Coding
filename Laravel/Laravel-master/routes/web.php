@@ -1,7 +1,16 @@
 <?php
 
 Route::get('/', function () {
-    return view('welcome');
+    $container = new \App\Container();
+
+    $container->bind('example', function () {
+        return new \App\Example;
+    });
+
+    $example = $container->resolve('example');
+
+    // ddd($example);
+    $example->go();
 });
 
 Route::get('/about', function () {

@@ -1,17 +1,6 @@
 <?php
 
-Route::get('/', function () {
-    $container = new \App\Container();
-
-    $container->bind('example', function () {
-        return new \App\Example;
-    });
-
-    $example = $container->resolve('example');
-
-    // ddd($example);
-    $example->go();
-});
+Route::get('/', 'PagesController@home');
 
 Route::get('/about', function () {
     // $articles = App\Article::all();

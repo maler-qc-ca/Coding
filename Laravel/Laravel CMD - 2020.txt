@@ -69,6 +69,9 @@ php artisan route:list
 
 
 >>> app()->bind('key', function () { return 'Moe'; } );
->>> resolve('key');
+>>> resolve('key'); // = app('key')
 
 >>> File::get(public_path('index.php'));
+>>> app('files')->get(public_path('index.php'))
+
+>>> App\ExampleFacade::handle(); // = app('example')->handle();

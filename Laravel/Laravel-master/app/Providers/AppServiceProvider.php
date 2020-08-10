@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Example;
+use App\ExampleNew;
 use App\Collaborator;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,6 +21,10 @@ class AppServiceProvider extends ServiceProvider
             $collaborator = new Collaborator;
             $foo = config('services.foo');
             return new Example($collaborator, $foo);
+        });
+
+        $this->app->bind('example', function () {
+            return new ExampleNew('XXL');
         });
     }
 

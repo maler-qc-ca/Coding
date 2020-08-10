@@ -65,3 +65,10 @@ php artisan route:list
 >>> $articles->pluck('tags')->collapse()->pluck('name')->unique(); === $articles->pluck('tags.*.name')->collapse()->unique();
 >>> $relevantTags = $articles->pluck('tags.*.name')->collapse()->unique();
 >>> $relevantTags = $articles->pluck('tags.*.name')->collapse()->unique()->map(function ($item){ return ucwords($item); });
+
+
+
+>>> app()->bind('key', function () { return 'Moe'; } );
+>>> resolve('key');
+
+>>> File::get(public_path('index.php'));

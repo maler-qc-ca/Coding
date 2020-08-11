@@ -62,6 +62,34 @@
                 </div>
             </div>
         </form>
+
+        <hr />
+
+        <form action="/contact" method="POST">
+            @csrf
+            <div class="mb-5">
+                <label for="email">Email Address</label>
+                <div class="control">
+                <input class="input" type="text" name="email" id="email" value="{{ old('email') }}">
+                @error('email')
+                <p class="help is-danger">{{ $message }}</p>
+                @enderror
+
+                @if (session('message'))
+                <p class="text-green">{{ session('message') }}</p>
+                @endif
+
+                </div>
+            </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link" type="submit">Send Email ></button>
+                </div>
+            </div>
+        </form>
+
+
     </div>
 </div>
 @endsection

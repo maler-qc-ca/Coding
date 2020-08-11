@@ -66,3 +66,5 @@ Route::delete('/articles/{article}', 'ArticlesController@destroy');
 // PUT /videos/2
 
 // DELETE /videos/2
+
+Route::post('/contact', 'ContactController@store');

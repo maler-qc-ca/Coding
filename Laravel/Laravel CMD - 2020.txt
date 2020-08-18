@@ -77,3 +77,7 @@ php artisan route:list
 >>> App\ExampleFacade::handle(); // = app('example')->handle();
 
 php artisan make:mail ContactHelpDesk
+
+php artisan make:mail Contact --markdown=emails.contact // --markdown=emails.contact : to create the file otherwise no blade for md
+
+$ php artisan vendor:publish --tag=laravel-mail // To extract the vendor for mail and then customize it

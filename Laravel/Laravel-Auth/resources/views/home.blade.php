@@ -16,8 +16,21 @@
 
                     {{ __('You are logged in!') }} {{ Auth::user()->name }} {{ auth()->user()->name }}
                 </div>
+
+                <form action="/payment" method="POST">
+                    @csrf
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button class="button is-link" type="submit">Nofify User ></button>
+                        </div>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
 </div>
+
+
+
 @endsection

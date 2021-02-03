@@ -1,0 +1,37 @@
+.parent {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.parent > li {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+
+.right {
+  text-align: right;
+}
+
+.severity {
+  color: white;
+  text-align: center;
+  margin: 5px;
+}
+
+.high {
+  background-color: #de3618;
+}
+
+.medium {
+  background-color: #f49342;
+}
+
+.low {
+  background-color: #eec200;
+}

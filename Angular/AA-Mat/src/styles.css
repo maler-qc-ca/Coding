@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.outter-wrapper {
+    padding: 40px;
+}
+.inner-wrapper {
+    padding: 30px;
+}
+
+.full-width-table {
+    width: 100%;
+  }
+
+.spacer {
+    flex: 1 1 auto;
+  }
+    
+  .button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
